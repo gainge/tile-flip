@@ -24,6 +24,11 @@ h1 {
   margin: 0;
 }
 
+h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
 button {
   font: inherit;
   padding: 0.5rem 1rem;
@@ -31,6 +36,11 @@ button {
   border-radius: 6px;
   background: #fff;
   cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.4;
+  cursor: default;
 }
 
 .modes {
@@ -61,6 +71,21 @@ button {
   min-height: 1.5em;
 }
 
+.layout {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.board {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -86,7 +111,129 @@ button {
   outline-offset: 2px;
 }
 
-.actions {
+.steps {
   display: flex;
+  gap: 0.25rem;
+}
+
+.steps button {
+  padding: 0.4rem 0.6rem;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: min(90vw, 300px);
+}
+
+.panel section {
+  display: flex;
+  flex-direction: column;
   gap: 0.5rem;
+}
+
+.panel-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.panel-head button {
+  padding: 0.25rem 0.6rem;
+  font-size: 0.9rem;
+}
+
+.list {
+  /* Positioned so entries' offsetTop is relative to the list, for scroll-into-view math. */
+  position: relative;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 260px;
+  overflow-y: auto;
+  background: #fff;
+  border: 2px solid #111;
+  border-radius: 6px;
+}
+
+.list:empty {
+  display: none;
+}
+
+.list li {
+  display: flex;
+  border-bottom: 1px solid #ddd;
+}
+
+.list li:last-child {
+  border-bottom: none;
+}
+
+.entry {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.4rem 0.6rem;
+  border: none;
+  border-radius: 0;
+  text-align: left;
+  background: transparent;
+}
+
+.entry:hover {
+  background: #f0f0f0;
+}
+
+.entry[aria-current="step"] {
+  background: #dbe6fb;
+}
+
+.entry.future {
+  color: #888;
+}
+
+.entry .meta {
+  display: block;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.delete {
+  border: none;
+  border-radius: 0;
+  padding: 0 0.75rem;
+  background: transparent;
+  color: #666;
+}
+
+.delete:hover {
+  background: #fde2e2;
+  color: #b00;
+}
+
+.empty {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.mini {
+  flex: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  width: 30px;
+  height: 30px;
+}
+
+.mini span {
+  border: 1px solid #111;
+  border-radius: 2px;
+  background: #fff;
+}
+
+.mini span.black {
+  background: #111;
 }

@@ -18,13 +18,37 @@
 
     <p id="hint"></p>
 
-    <div id="grid" class="grid"></div>
+    <div class="layout">
+      <section class="board">
+        <div id="grid" class="grid"></div>
 
-    <p id="status" aria-live="polite"></p>
+        <p id="status" aria-live="polite"></p>
 
-    <div class="actions">
-      <button type="button" id="reset">Reset to start</button>
-      <button type="button" id="clear">Clear all</button>
+        <div class="steps">
+          <button type="button" id="first">« Start</button>
+          <button type="button" id="prev">‹ Prev</button>
+          <button type="button" id="next">Next ›</button>
+          <button type="button" id="last">End »</button>
+        </div>
+
+        <button type="button" id="clear">Clear all</button>
+      </section>
+
+      <aside class="panel">
+        <section>
+          <h2>History</h2>
+          <ol id="history" class="list"></ol>
+        </section>
+
+        <section>
+          <div class="panel-head">
+            <h2>Saved</h2>
+            <button type="button" id="save">Save sequence</button>
+          </div>
+          <ul id="saves" class="list"></ul>
+          <p id="saves-empty" class="empty">No saved sequences yet.</p>
+        </section>
+      </aside>
     </div>
   </main>
 
