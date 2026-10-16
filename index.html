@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tile Flip</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>Tile Flip</h1>
+
+    <div class="modes" role="radiogroup" aria-label="Mode">
+      <button type="button" data-mode="setup" role="radio">Setup</button>
+      <button type="button" data-mode="play" role="radio">Play</button>
+    </div>
+
+    <p id="hint"></p>
+
+    <div id="grid" class="grid"></div>
+
+    <p id="status" aria-live="polite"></p>
+
+    <div class="actions">
+      <button type="button" id="reset">Reset to start</button>
+      <button type="button" id="clear">Clear all</button>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
